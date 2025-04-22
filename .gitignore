@@ -4,3 +4,9 @@ __pycache__/
 *.pyd
 
 .env
+
+*.log
+*.docker
+docker-compose.override.yml
+
+.vscode/
