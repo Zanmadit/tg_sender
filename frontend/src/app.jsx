@@ -10,15 +10,15 @@ function App() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Валидация формы
+  // Data validation
   const validateForm = () => {
-    // Проверка, что все поля заполнены
+    // Check for all fill
     if (!form.name || !form.email || !form.message) {
       setStatus('Пожалуйста, заполните все поля.');
       return false;
     }
 
-    // Проверка правильности формата email
+    // Email check
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(form.email)) {
       setStatus('Пожалуйста, введите правильный email.');
@@ -31,13 +31,13 @@ function App() {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    // Проверка формы перед отправкой
+    // Check form
     if (!validateForm()) return;
 
     setLoading(true);
     setStatus('');
 
-    // Отправка данных
+    // Data trasnport
     const response = await fetch('http://localhost:8000/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

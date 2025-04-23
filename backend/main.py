@@ -22,10 +22,10 @@ class ContactForm(BaseModel):
 @app.post("/send")
 def send_message(data: ContactForm):
     text = f"""
-📩 Новая заявка:
+Новая заявка:
 👤 Имя: {data.name}
-📧 Email: {data.email}
-📝 Сообщение: {data.message}
+Email: {data.email}
+Сообщение: {data.message}
 """
     url = f"https://api.telegram.org/bot{settings.TELEGRAM_TOKEN}/sendMessage"
     response = requests.post(url, data={"chat_id": settings.CHAT_ID, "text": text})
