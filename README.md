@@ -4,4 +4,4 @@ python -m venv venv
 
 .\venv\Scripts\activate.bat
 
-pip install fastapi[all] uvicorn requests pydantic-settings
+pip install -r requirements.txt
