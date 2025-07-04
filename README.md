@@ -1,4 +1,4 @@
-# Logitex_tg_bb
+# Simple telegram auth-info sender
 
 python -m venv venv
 
